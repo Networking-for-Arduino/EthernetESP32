@@ -41,7 +41,7 @@ esp_eth_mac_t* DM9051Driver::newMAC() {
 
 esp_eth_phy_t* DM9051Driver::newPHY() {
   eth_phy_config_t phy_config = ETH_PHY_DEFAULT_CONFIG();
-  phy_config.phy_addr = ESP_ETH_PHY_ADDR_AUTO;
+  phy_config.phy_addr = phyAddr;
   phy_config.reset_gpio_num = digitalPinToGPIONumber(pinRst);
 
   return esp_eth_phy_new_dm9051(&phy_config);

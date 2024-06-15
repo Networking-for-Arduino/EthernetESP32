@@ -49,7 +49,7 @@ W5500Driver driver(4, 26, 27); // CS pin is 4, INT pin is 26, reset pin is 27
 W5500Driver driver(SS, -1, 27); // CS pin is default, INT is not used and reset pin is 27
 ```
 
-To use other SPIClass instance set it on driver with `setSPI`. To change the SPI frequency use `setSpiFreq`. Default frequency is 20 MHz.
+To use other SPIClass instance set it on driver with `setSPI`. To change the SPI frequency use `setSpiFreq`. Default frequency is 20 MHz. Sometimes automatic PHY address detection doesn't work, then use `setPhyAddr` to set the right PHY address. 
 
 Example with all options specified (using HSPI as SPI1 on FSPI pins):
 
@@ -64,6 +64,7 @@ void setup() {
 
   driver.setSPI(SPI1);
   driver.setSpiFreq(10);
+  driver.setPhyAddress(0);
 
   Ethernet.init(driver);
 
@@ -112,6 +113,8 @@ The EMACDriver has optional parameters:
 * **clockMode** - values from enum emac_rmii_clock_mode_t, default is `EMAC_CLK_EXT_IN`
 
 The values for clockPin and clockMode are [enums from ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/network/esp_eth.html?highlight=rmii#id14).
+
+Sometimes automatic PHY address detection doesn't work, then use `setPhyAddr` to set the right PHY address. 
 
 ## The Ethernet object
 

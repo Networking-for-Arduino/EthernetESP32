@@ -39,6 +39,10 @@ void EthDriver::end() {
   }
 }
 
+void EthDriver::setPhyAddress(int32_t addr) {
+  phyAddr = addr;
+}
+
 EthDriver::~EthDriver() {
   end();
 };

@@ -37,6 +37,8 @@ public:
   void begin();
   void end();
 
+  void setPhyAddress(int32_t addr);
+
   virtual bool usesIRQ() = 0;
 
 protected:
@@ -44,6 +46,8 @@ protected:
   virtual esp_eth_phy_t* newPHY() = 0;
 
   friend class EthernetClass;
+
+  int32_t phyAddr = ESP_ETH_PHY_ADDR_AUTO;
 
   esp_eth_mac_t* mac = NULL;
   esp_eth_phy_t* phy = NULL;
