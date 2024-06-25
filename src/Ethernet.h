@@ -86,8 +86,8 @@ protected:
 
 extern EthernetClass Ethernet;
 
-#define EthernetUDP NetworkUDP
-#define EthernetServer NetworkServer
-#define EthernetClient NetworkClient
+typedef NetworkUDP EthernetUDP;
+typedef NetworkServer EthernetServer;
+typedef NetworkClient EthernetClient;
 
 #endif

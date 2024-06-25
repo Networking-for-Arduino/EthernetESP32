@@ -134,6 +134,6 @@ The Ethernet object inherits from NetworkInterface class from the Network librar
 
 The integration of the IDF drivers with NetworkInterface is code adopted from ETH.cpp of the bundled Ethernet library.
 
-EthernetClient, EthernetServer and EthernetUDP are macros aliasing NetworkClient, NetworkServer and NetworkUDP from the Network library (as are WiFiCllent, WiFiServer and WiFiUDP in the WiFi library).
+EthernetClient, EthernetServer and EthernetUDP are typedefs aliasing NetworkClient, NetworkServer and NetworkUDP from the Network library (as are WiFiCllent, WiFiServer and WiFiUDP in the WiFi library).
 
 Network modules tested with the library are SPI modules W5500 and ENC28J60 and a LAN8720 PHY module.
